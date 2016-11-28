@@ -1,0 +1,36 @@
+<project name="tweetlocml-deploy" basedir="." default="deploy">
+
+    <property name="skel.dir" value="skel"/>
+    <property name="deploy.dir" value="deploy"/>
+    <property name="data.dir" value="${deploy.dir}/data"/>
+    <property name="ml.dir" value="${deploy.dir}/tweetlocml"/>
+    <property name="place.dir" value="place"/>
+    <property name="pos.dir" value="pos"/>
+    <property name="stem.dir" value="stem"/>
+
+    <target name="clean">
+        <delete dir="${deploy.dir}"/>
+    </target>
+
+    <target name="deploy">
+        <mkdir dir="${deploy.dir}"/>
+        <mkdir dir="${data.dir}"/>
+        <mkdir dir="${ml.dir}"/>
+        <mkdir dir="${ml.dir}/${place.dir}"/>
+        <mkdir dir="${ml.dir}/${pos.dir}"/>
+        <mkdir dir="${ml.dir}/${stem.dir}"/>
+
+        <copy todir="${data.dir}">
+            <fileset dir="${skel.dir}/data"/>
+        </copy>
+
+        <copy todir="${ml.dir}">
+            <file file="config.properties"/>
+            <file file="attributes.txt"/>
+            <file file="target/tweetlocml-1.0-SNAPSHOT-jar-with-dependencies.jar"/>
+            <fileset dir="${skel.dir}/scripts"/>
+        </copy>
+
+    </target>
+
+</project>

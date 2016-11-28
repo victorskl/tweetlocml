@@ -1,0 +1,20 @@
+Tweet Data
+----------
+
+1. Harvest Twitter user public tweets data e.g. using twitter4j (http://twitter4j.org/en/) with Twitter API (https://dev.twitter.com/docs)
+
+2. And process it in the following format:
+        
+        user_id (tab) tweet_id (tab) tweet_text (tab) location_code  (newline)
+   
+3. Save it as plain text ".txt" format
+
+4. Use hold-out strategy, split the tweets corpus to 60/20/20 for Training/Development/Test respectively. This directory should contains 3 tweets corpus as follow:
+    dev-tweets.txt
+    test-tweets.txt
+    train-tweets.txt
+
+5. And specify them in "config.properties", and fields "tweets.train, tweets.dev, tweets.test"
+
+"location_code" is 2-letter format of US city names e.g. SD for San Diego. This can be pre-determined from a Twitter user profile or location Long/Lat information through Twitter API.  For the test dataset, do label the "location_code" as question-mark "?" instead -- i.e. in order to evaluate as an unseen data.
+

@@ -1,0 +1,5 @@
+OpenNLP
+-------
+
+1. Download the OpenNLP model data from http://opennlp.sourceforge.net/README.html#models
+2. Specify "opennlp.model.pos.en" field in "config.properties"

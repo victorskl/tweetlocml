@@ -1,0 +1,5 @@
+Stop words
+----------
+
+1. Download from http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words
+2. Save it as "stop_words.txt"

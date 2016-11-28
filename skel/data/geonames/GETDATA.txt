@@ -1,0 +1,7 @@
+Gazetteer Dictionary
+---------------------
+
+1. Download Free Gazetteer data from GeoNames (http://download.geonames.org/export/dump/) e.g. US.zip
+2. Process it to extract the column "asciiname" field data only. e.g. US.txt
+3. Optionally, sort the location names and remove duplicates.
+4. Save this gazetteer data in the plain text ".txt" format and specify it in "config.properties", the "gazetteer=path/to/file.txt"
