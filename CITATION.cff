@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Lin
+    given-names: Victor San Kho
+    orcid: https://orcid.org/0000-0002-3940-4729
+title: victorskl/tweetlocml: v20161128
+version: v20161128
+date-released: 2022-10-17
