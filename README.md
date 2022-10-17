@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/74951858.svg)](https://zenodo.org/badge/latestdoi/74951858)
+
+
 About
 -----
 In this experiment, the key objective is to **infer the user location based on the user contents** i.e. _infer Twitter user geolocation based on in their tweets_. This experiment involves two  key tasks.
@@ -199,7 +202,12 @@ It is good idea to run with [`screen`](https://www.google.com.au/search?q=linux%
 
 Notes
 -----
-This assignment work is done for COMP90049 Project 2 assessment 2016 SM2, The University of Melbourne. You can read [the report](report/SanKhoLin_829463_COMP90049_Project2_Report.pdf) on background context, though it discusses more on the data that I have worked with. You may also want to read the related [`tweetloc`](https://github.com/victorskl/tweetloc) assignment. The implementation still has room for improvement. You may cite this work as follow.
+This assignment work is done for COMP90049 Project 2 assessment 2016 SM2, The University of Melbourne. You can read [the report](report/SanKhoLin_829463_COMP90049_Project2_Report.pdf) on background context, though it discusses more on the data that I have worked with. You may also want to read the related [`tweetloc`](https://github.com/victorskl/tweetloc) assignment. The implementation still has room for improvement. You may cite this work as follows.
+
+Zenodo:
+
+[![DOI](https://zenodo.org/badge/74951858.svg)](https://zenodo.org/badge/latestdoi/74951858)
+
 
 LaTeX/BibTeX:
 
