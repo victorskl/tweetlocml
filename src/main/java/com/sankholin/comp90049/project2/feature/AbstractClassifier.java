@@ -7,10 +7,8 @@ import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.output.StringBuilderWriter;
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.analysis.util.CharArraySet;
+import org.apache.lucene.analysis.CharArraySet;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
+import static org.apache.lucene.analysis.classic.ClassicAnalyzer.STOP_WORDS_SET;
 
 public class AbstractClassifier {
 
@@ -46,7 +46,7 @@ public class AbstractClassifier {
         String stopwordsString = config.getString("stopwords.std319");
         try {
             List<String> stops = FileUtils.readLines(new File(stopwordsString), "UTF-8");
-            stopSet = CharArraySet.copy(StandardAnalyzer.STOP_WORDS_SET);
+            stopSet = CharArraySet.copy(STOP_WORDS_SET);
             stopSet.addAll(stops);
         } catch (IOException e) {
             e.printStackTrace();

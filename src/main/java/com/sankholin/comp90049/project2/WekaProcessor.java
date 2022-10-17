@@ -85,12 +85,12 @@ public class WekaProcessor {
             }
 
             if (mode.equalsIgnoreCase("test")) {
-                vals[attrSize-1] = Instance.missingValue(); // or ... = Utils.missingValue() for Weka > 3.7.1
+                vals[attrSize-1] = Utils.missingValue(); // Instance.missingValue() or Utils.missingValue() for Weka > 3.7.1
             } else {
                 vals[attrSize-1] = attVals.indexOf(strings[3]);
             }
 
-            data.add(new Instance(1.0, vals));
+            data.add(new DenseInstance(1.0, vals));
 
             String animData = "\r" + anim.charAt(animIdx % anim.length())  + " " + animIdx;
             try {

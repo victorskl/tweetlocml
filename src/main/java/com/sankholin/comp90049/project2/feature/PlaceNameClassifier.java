@@ -3,7 +3,7 @@ package com.sankholin.comp90049.project2.feature;
 import com.sankholin.comp90049.project2.model.TweetTerm;
 import opennlp.tools.tokenize.WhitespaceTokenizer;
 import org.apache.commons.configuration2.Configuration;
-import org.apache.lucene.search.spell.LevensteinDistance;
+import org.apache.lucene.search.spell.LevenshteinDistance;
 import org.apache.lucene.search.spell.StringDistance;
 
 import java.util.*;
@@ -21,7 +21,7 @@ public class PlaceNameClassifier extends AbstractClassifier implements Classifie
         dictionary = new TreeMap<>();
         buildGazeDictionary();
         //stringDistance = new NGramDistance(NGRAM_SIZE);
-        stringDistance = new LevensteinDistance();
+        stringDistance = new LevenshteinDistance();
     }
 
     private void buildGazeDictionary() {

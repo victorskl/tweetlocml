@@ -2,6 +2,7 @@ package com.sankholin.comp90049.project2;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import com.opencsv.exceptions.CsvException;
 import com.sankholin.comp90049.project2.model.PartedTweetTerm;
 import com.sankholin.comp90049.project2.tool.Utilities;
 import org.apache.logging.log4j.LogManager;
@@ -103,7 +104,7 @@ public class MasterParted {
                 //System.out.println();
             }
 
-        } catch (IOException e) {
+        } catch (IOException | CsvException e) {
             e.printStackTrace();
         }
     }

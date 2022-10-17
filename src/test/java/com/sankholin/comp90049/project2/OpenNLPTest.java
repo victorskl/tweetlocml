@@ -9,6 +9,7 @@ import opennlp.tools.postag.POSTaggerME;
 import opennlp.tools.sentdetect.SentenceDetectorME;
 import opennlp.tools.sentdetect.SentenceModel;
 import opennlp.tools.tokenize.WhitespaceTokenizer;
+import opennlp.tools.util.MarkableFileInputStreamFactory;
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
 import opennlp.tools.util.StringList;
@@ -16,6 +17,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -60,7 +62,9 @@ public class OpenNLPTest {
         input = "Hey Ryan How are you How is Portland Just checking out Twitter Hope JD went well- say hello to PAF folks";
         input = "i'm back to work";
         //input = "hey, ryan, how, are, you, how, is, portland, just, checking, out, twitter, hope, jd, went, well, say, hello, to, paf, folks";
-        ObjectStream<String> lineStream = new PlainTextByLineStream(new StringReader(input));
+        ObjectStream<String> lineStream = new PlainTextByLineStream(
+                new MarkableFileInputStreamFactory(new File(input)), StandardCharsets.UTF_8
+        );
 
         perfMon.start();
 
@@ -159,7 +163,10 @@ public class OpenNLPTest {
             perfMon.start();
             for (int i = 0; i < list.size(); i++) {
                 String inputString = list.get(i);
-                ObjectStream<String> lineStream = new PlainTextByLineStream(new StringReader(inputString));
+                // ObjectStream<String> lineStream = new PlainTextByLineStream(new StringReader(inputString));
+                ObjectStream<String> lineStream = new PlainTextByLineStream(
+                        new MarkableFileInputStreamFactory(new File(inputString)), StandardCharsets.UTF_8
+                );
                 String line;
                 while ((line = lineStream.read()) != null) {
                     String whitespaceTokenizerLine[] = WhitespaceTokenizer.INSTANCE.tokenize(line);
